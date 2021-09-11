@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.12.3",
-    "angular": "^1.7.4",
+    "angular": "^1.8.2",
     "cpx": "^1.5.0"
   }
 }

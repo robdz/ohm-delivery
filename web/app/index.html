@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="lib/angular/angular.js"></script>
-        <script src="./main.js"></script>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <title>Ohm Delivery</title>
-    </head>
-    <body>
-        <div class="banner">
-            <h1>Ohm Delivery</h1>
-            <h2>Get shocked by the power</h2>
-        </div>
-        
-        <div ng-app="ohm-delivery">
-            <form ng-controller="tracking" ng-submit="sendData()">
-                <p>
-                    <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
-                </p>
-                <p>
-                    <button id="formBtn" type="submit">Submit</button>
-                </p>
-                <p>
-                    <span ng-if="errorMessage">{{errorMessage}}</span>
-                </p>
-            </form>
-        </div>
-    </body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="lib/angular/angular.js"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Ohm Delivery</title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>Ohm Delivery</h1>
+      <h2>Get shocked by the power</h2>
+    </div>
+
+    <div ng-controller="tracking" ng-app="ohm-delivery">
+      <form ng-submit="sendData()">
+        <p>
+          <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id" />
+        </p>
+        <p>
+          <button id="formBtn" type="submit">Submit</button>
+        </p>
+    </form>
+
+        <pre ng-if="found">
+            TrackingId: {{trackingId}}
+
+            Client
+                Name: {{name}}
+                Address: {{address}}
+            Description
+                Volts: {{volts}}
+                Amperes: {{amperes}}
+
+            Status: 
+            <select name="statusSelect" id="statusSelect" ng-model="status">
+                <option value="CREATED">CREATED</option>
+                <option value="PREPARING">PREPARING</option>
+                <option value="READY">READY</option>
+                <option value="IN_DELIVERY">IN_DELIVERY</option>
+                <option value="DELIVERED">DELIVERED</option>
+                <option value="REFUSED">REFUSED</option>
+            </select>  
+            <button ng-click="changeStatus()">Change status</button><br>
+
+            Reorder:
+            <button ng-click="reorder()">Reorder</button>
+        </pre>
+        <p>
+            <span ng-if="errorMessage">{{errorMessage}}</span>
+          </p>
+    </div>
+  </body>
 </html>
