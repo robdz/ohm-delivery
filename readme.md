@@ -2,7 +2,7 @@
 # OHM DELIVERY
 This is a fictional company minimalistic project that you have to fix and improve.
 
-The company delivers electrical resitances and provides a tracking page to their drivers and customers.
+The company delivers electrical resitances and provides a tracking page to their drivers and c ?ustomers.
 
 Improve the website to let the user search for the status of a resistance being delivered. When delivered, the driver should be able to acknowledge the delivery (or the failure) of the ordered resistance. 
 
